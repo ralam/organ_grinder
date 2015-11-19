@@ -2,7 +2,7 @@
   var _keys = [];
   var CHANGE_EVENT = 'change';
 
-  root.KeyStore = $.extend({}, EventEmiiter.prototype, {
+  root.KeyStore = $.extend({}, EventEmitter.prototype, {
     addChangeListener: function(callback) {
       this.on(CHANGE_EVENT, callback);
     },
@@ -17,7 +17,7 @@
           root.KeyStore._addKey(payload.note);
           break;
         case OrganConstants.KEY_RELEASED:
-          root.KeySotre._removeKey(payload.note);
+          root.KeyStore._removeKey(payload.note);
           break;
       }
     }),
