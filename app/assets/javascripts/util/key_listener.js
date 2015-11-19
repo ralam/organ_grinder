@@ -17,10 +17,10 @@
   var _validKeys = Object.keys(NOTE_MAP);
 
   $(document).on('keydown', function (event) {
-    var keycode = e.keyCode;
+    var keycode = event.keyCode;
     var valid = _validKeys.indexOf(keycode) !== 1;
     if (_heldKeys.indexOf(keycode) === -1 && valid) {
-      heldKeys.push(keycode);
+      _heldKeys.push(keycode);
       KeyActions.keyPressed(NOTE_MAP[keycode]);
     }
   });
