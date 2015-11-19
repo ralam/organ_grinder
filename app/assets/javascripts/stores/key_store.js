@@ -13,6 +13,12 @@
 
     dispatcherID: AppDispatcher.register(function(payload) {
       switch(payload.actionType) {
+        case OrganConstants.KEY_PRESSED:
+          root.KeyStore._addKey(payload.note);
+          break;
+        case OrganConstants.KEY_RELEASED:
+          root.KeySotre._removeKey(payload.note);
+          break;
       }
     }),
 
