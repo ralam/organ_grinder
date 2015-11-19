@@ -19,16 +19,16 @@
   $(document).on('keydown', function (event) {
     var keycode = event.keyCode;
     var valid = _validKeys.indexOf(keycode) !== 1;
-    if (_heldKeys.indexOf(keycode) === -1 && valid) {
+    if (_heldKeys.indexOf(keycode) == -1 && valid) {
       _heldKeys.push(keycode);
       KeyActions.keyPressed(NOTE_MAP[keycode]);
     }
   });
 
   $(document).on('keyup', function (event) {
-    var keycode = e.keyCode;
+    var keycode = event.keyCode;
     var idx = _heldKeys.indexOf(keycode)
-    if (idx !== -1) {
+    if (idx != -1) {
       _heldKeys.splice(idx, 1);
       KeyActions.keyReleased(NOTE_MAP[keycode]);
     }

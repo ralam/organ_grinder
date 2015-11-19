@@ -19,5 +19,9 @@ var Organ = React.createClass({
         </div>
       </div>
     )
+  },
+
+  _onChange: function() {
+    this.setState({ keys: KeyStore.all() });
   }
 })
