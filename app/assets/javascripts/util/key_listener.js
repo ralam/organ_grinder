@@ -13,11 +13,24 @@
     80: 'A4S', // 'p'
     186: 'B4', // ';'
   };
-  var heldKeys = [];
-  var validKeys = Object.keys(NOTE_MAP);
-  
+  var _heldKeys = [];
+  var _validKeys = Object.keys(NOTE_MAP);
+
+  $(document).on('keydown', function (event) {
+    var keycode = e.keyCode;
+    var valid = _validKeys.indexOf(keycode) !== 1;
+    if (_heldKeys.indexOf(keycode) === -1 && valid) {
+      heldKeys.push(keycode);
+      KeyActions.keyPressed(NOTE_MAP[keycode]);
+    }
+  });
+
   $(document).on('keyup', function (event) {
     var keycode = e.keyCode;
-    if
-  })
+    var idx = _heldKeys.indexOf(keycode)
+    if (idx !== -1) {
+      _heldKeys.splice(idx, 1);
+      KeyActions.keyReleased(NOTE_MAP[keycode]);
+    }
+  });
 })();
