@@ -11,7 +11,10 @@ var Key = React.createClass({
   render: function() {
     var className = "note-key"
     if(this.state.pressed){
-      className += "pressed";
+      className += " pressed";
+    }
+    if(this.props.noteName[2] === "S") {
+      className += " sharp";
     }
     return <div className={className}>{this.props.noteName}</div>;
   },
