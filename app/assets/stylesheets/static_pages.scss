@@ -16,7 +16,6 @@
 .note-key.sharp {
   position: relative  ;
   background-color: black;
-  color: white;
   left: 15px;
   height: 70px;
   width: 30px;
@@ -35,4 +34,9 @@
   top: 2px;
   box-shadow: 0px 0px 0px #ffffff;
   transition: top 2s;
+}
+
+.key-label {
+  position: relative;
+  top: 110px;
 }

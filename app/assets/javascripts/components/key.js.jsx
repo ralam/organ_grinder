@@ -1,6 +1,7 @@
 var Key = React.createClass({
   componentDidMount: function () {
     this.note = new Note(TONES[this.props.noteName]);
+    console.log(this.props);
     KeyStore.addChangeListener(this._onChange);
   },
 
@@ -16,7 +17,14 @@ var Key = React.createClass({
     if(this.props.noteName[2] === "S") {
       className += " sharp";
     }
-    return <div className={className}>{this.props.noteName}</div>;
+    return <div className={className}>
+
+      <div className="key-label">
+        <div></div>
+        <div>{this.props.keyName}</div>
+        <div></div>
+      </div>
+    </div>;
   },
 
   thisKeyPressed: function () {
